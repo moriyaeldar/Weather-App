@@ -1,0 +1,33 @@
+.container {
+    max-width: $normal-breakpoint;
+    margin: 0 auto;
+    padding: 10px;
+    
+   
+    @include from-mobile-layout {
+        max-width: initial;
+    }
+
+    @include from-normal-layout {
+        max-width: $tablet-breakpoint;
+    }
+
+    @include from-wide-layout {
+        max-width: $wide-breakpoint;
+    }
+}
+
+// GRIDS
+.simple-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+.specific-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-gap: 15px;
+    margin: 40px;
+    justify-content: center;
+}

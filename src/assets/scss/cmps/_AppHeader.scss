@@ -1,0 +1,22 @@
+.app-header {
+  padding: 0 25px;
+  height: 80px;
+  background-color: rgb(230, 240, 247);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  h1{
+    color: royalblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  nav {
+    display: flex;
+    justify-content:end;
+    gap: 10px;
+    transform: translateX(334px);
+    .active-nav {
+      color: rgb(51, 175, 212);
+    }
+  }
+}

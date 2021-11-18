@@ -1,0 +1,83 @@
+.weather-details {
+  margin-top: 50px;
+
+  .date{
+    color: steelblue;
+  }
+  .img-container{
+    height: 100px;
+    width:100px;
+    overflow: hidden;
+  }
+  img{
+   width: 400px;
+   height: 200px;
+   margin-right: 10px;
+    object-fit: cover;
+      &.Snow{
+        object-position: 20px 30px;
+      }
+    &.Sleet{
+        object-position: 70px 30px;
+    }
+    &.Hail{
+      object-position: -75px -8px;
+    
+    }
+    &.Thunderstorm{
+        object-position: 45px 30px;
+
+    }
+    &.Heavy.Rain{
+      object-position: -183px -105px;
+
+    }
+    &.Light.Rain{
+      object-position: -438px -120px;
+    }
+    &.Showers	{
+      object-position: -301px -101px;
+
+    }
+    &.Heavy.Cloud	{
+      object-position: -74px -119px;
+
+    }
+    &.Light.Cloud	{
+        object-position: -299px 33px;
+
+    }
+    &.Clear	{
+      object-position: -420px 30px;
+    }
+    
+    }
+  > p {
+    text-align: center;
+}
+}
+
+h5{
+  font-weight: bold;
+}
+h2{
+  margin-top: 5px;
+}
+span{
+  font-size: 25px;
+  font-weight: bold;
+  color:rgb(57, 118, 230);
+  cursor: pointer;
+}
+
+.sources{
+  gap: 5px;
+  color: darkblue;
+  text-align: center;
+  margin-top: 15%;
+
+  h3{
+    color: black;
+    margin-bottom: 10px;
+  }
+}

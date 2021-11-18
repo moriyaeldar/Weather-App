@@ -1,0 +1,3 @@
+# https://www.taskstxt.org/taskstxt.html
+User-agent: *
+Disallow:
