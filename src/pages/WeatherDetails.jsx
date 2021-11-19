@@ -43,7 +43,7 @@ export const WeatherDetails = ({ history, match }) => {
     <img className="loader" src={loader} alt="" />
   ) : (
     <>
-      <span onClick={goBack}>←</span>
+      <span className="arrow" onClick={goBack}>←</span>
       <h2>{weatherService.getCountry()}</h2>
       <div className="flex space-around">
         <div className="weather-details text-center">
@@ -59,23 +59,23 @@ export const WeatherDetails = ({ history, match }) => {
             {" "}
             <p>{weather.weather_state_name}</p>
           </div>
-          <p>max:{weather.max_temp.toFixed()}°C</p>
-          <p>min:{weather.min_temp.toFixed()}°C</p>
+          <p ><span data-trans="max">max</span> :{weather.max_temp.toFixed()}°C</p>
+        <p ><span data-trans="min">min</span> :{weather.min_temp.toFixed()}°C</p>
           <p>
             {getArrow()}
             {weather.wind_speed.toFixed()}mph
           </p>
-          <h5>humidity:</h5>
+          <h5 data-trans="humidity">humidity:</h5>
           <p>{weather.humidity}</p>
-          <h5>visibility:</h5>
+          <h5 data-trans="visibility">visibility:</h5>
           <p>{weather.visibility.toFixed()}</p>
-          <h5>pressure:</h5>
+          <h5 data-trans="pressure">pressure:</h5>
           <p>{weather.air_pressure}mb</p>
-          <h5>confidence:</h5>
+          <h5 data-trans="confidence">confidence:</h5>
           <p>{weather.predictability}</p>
         </div>
         <div className="sources flex column">
-          <h3>Sources</h3>
+          <h3 data-trans="Sources">Sources</h3>
           {weatherService.getSources().map((source) => (
             <a href={source.url}>{source.title}</a>
           ))}

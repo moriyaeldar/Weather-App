@@ -7,7 +7,6 @@ import loader from "../assets/imgs/loader.svg";
 export const WeatherApp = () => {
   const [weather, setWether] = useState(undefined);
   const [filterBy, setFilter] = useState(undefined);
-
   useEffect(async () => {
     const weather = await weatherService.query(filterBy);
     setWether(weather);
@@ -20,22 +19,23 @@ export const WeatherApp = () => {
   return !weather ? (
     <img className="loader" src={loader} alt="loading..." />
   ) : (
+
     <div className="weather-app">
       <div className="top">
         <div className="right flex column space-around align-center">
           <WeatherFilter onChangeFilter={onChangeFilter} />
-
+        
           <ul className="clean-list">
             <li>
-              <h5>time</h5>
+              <h5 data-trans="time">time</h5>
               {weatherService.getData().time.substring(11, 16)}
             </li>
             <li>
-              <h5>sunrise</h5>
+              <h5 data-trans="sunrise">sunrise</h5>
               {weatherService.getData().sun_rise.substring(11, 16)}
             </li>
             <li>
-              <h5>sunset</h5>
+              <h5 data-trans="sunset">sunset</h5>
               {weatherService.getData().sun_set.substring(11, 16)}
             </li>
           </ul>
