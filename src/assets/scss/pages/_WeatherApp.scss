@@ -5,8 +5,10 @@
   .top {
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
+    margin-left: 4%;
+    margin-right: 4%;
   }
 
   li{

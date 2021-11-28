@@ -14,13 +14,17 @@ const StyledButton = styled.button`
   background-color: azure;
   border: none;
 `;
+const StyledTitle = styled.h2`
+margin-right:52%;
+margin-top:5px
+`;
 
 export const WeatherDetails = ({ history, match }) => {
   const [weather, setWeather] = useState(undefined);
 
   useEffect(() => {
     loadweather();
-  });
+  },[]);
 
   const goBack = () => {
     history.push("/");
@@ -30,6 +34,7 @@ export const WeatherDetails = ({ history, match }) => {
     const { id } = match.params;
     const weather = weatherService.getById(id);
     setWeather(weather);
+    console.log(weather);
   };
 
   return !weather ? (
@@ -37,7 +42,7 @@ export const WeatherDetails = ({ history, match }) => {
   ) : (
     <>
       <StyledButton onClick={goBack}>←</StyledButton>
-      <h2>{weatherService.getCountry()}</h2>
+      <StyledTitle>{weatherService.getCountry()}</StyledTitle>
       <div className="flex space-around">
       <WeatherData weather={weather}></WeatherData>
       <div className="sources flex column">

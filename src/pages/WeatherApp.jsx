@@ -5,25 +5,26 @@ import { weatherService } from "../services/weatherService.js";
 import styled from "styled-components";
 import loader from "../assets/imgs/loader.svg";
 const listStyled = styled.ul`
-margin: 0;
-padding: 0;
-list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 
-& > li {
+  & > li {
     margin: 0;
     padding: 0;
-}
+  }
 `;
 export const WeatherApp = () => {
   const [weather, setWether] = useState(undefined);
   const [filterBy] = useState(undefined);
   useEffect(() => {
-    (async () => {
-      const weather = await weatherService.query(filterBy);
-      setWether(weather);
-    })();
-  }, [filterBy]);
+    getWeatherData();
+  });
 
+  const getWeatherData = async () => {
+    const weather = await weatherService.query(filterBy);
+    setWether(weather);
+  };
   const onChangeFilter = async (filterBy) => {
     const weather = await weatherService.query(filterBy);
     setWether(weather);
