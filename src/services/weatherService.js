@@ -1,4 +1,3 @@
-import { loadOptions } from "@babel/core";
 import axios from "axios";
 import storageService from "./storage.service";
 export const weatherService = {
@@ -6,7 +5,8 @@ export const weatherService = {
   getById,
   getCountry,
   getSources,
-  getData
+  getData,
+getWeatherArrow
 };
 const key = "WEATHER";
 const dataKey = "DATA";
@@ -38,4 +38,28 @@ function getData() {
   const data = storageService.loadFromStorage(dataKey);
   return data;
 }
+
+function getWeatherArrow(weather) {
+  const arrows = [
+    { name: "SSE", value: "↘" },
+    { name: "ESE", value: "↘" },
+    { name: "SE", value: "↘" },
+    { name: "ENE", value: "↗" },
+    { name: "NE", value: "↗" },
+    { name: "WNW", value: "↖" },
+    { name: "NW", value: "↖" },
+    { name: "NNW", value: "↖" },
+    { name: "SSW", value: "↙" },
+    { name: "SW", value: "↙" },
+    { name: "WSW", value: "↙" },
+    { name: "W", value: "←" },
+    { name: "S", value: "↓" },
+    { name: "N", value: "↑" },
+    { name: "E", value: "→" },
+  ];
+  const arrow = arrows.map((arr) =>
+    arr.name === weather.wind_direction_compass ? arr.value : ""
+  );
+  return arrow;
+};
 

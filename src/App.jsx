@@ -1,4 +1,4 @@
-import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { AppHeader } from './cmps/AppHeader';
 import { WeatherApp } from './pages/WeatherApp';
 import { WeatherDetails } from './pages/WeatherDetails';
