@@ -1,4 +1,6 @@
 export const WeatherFilter = ({ onChangeFilter }) => {
+  const US=[{"name":"New York","value":"2459115","trans":"new"},{"name":"Los Angeles","value":"2442047","trans":"los"}]
+  const EU=[{"name":"Marseille","value":"610264","trans":"Marseille"},{"name":"Barcelona","value":"753692","trans":"Barcelona"},{"name":"Rome","value":"721943","trans":"Rome"}]
   return (
     <select
       onChange={(ev) => onChangeFilter(ev.target.value)}
@@ -6,28 +8,10 @@ export const WeatherFilter = ({ onChangeFilter }) => {
       id="countries"
     >
       <option data-trans="select">-select a country-</option>
-      <optgroup label="United State" data-trans="State">
-        {" "}
-      </optgroup>
-
-      <option value="2459115" data-trans="new">
-        New York
-      </option>
-      <option value="2442047" data-trans="los">
-        Los Angeles
-      </option>
-      <optgroup label="Europe" data-trans="Europe">
-        {" "}
-      </optgroup>
-      <option value="610264" data-trans="Marseille">
-        Marseille
-      </option>
-      <option value="753692" data-trans="Barcelona">
-        Barcelona
-      </option>
-      <option value="721943" data-trans="Rome">
-        Rome
-      </option>
+      <optgroup label="United State" data-trans="State"></optgroup>
+      {US.map(city=><option value={city.value} data-trans={city.trans}>{city.name}</option>)}
+      <optgroup label="Europe" data-trans="Europe"></optgroup>
+      {EU.map(city=><option value={city.value} data-trans={city.trans}>{city.name}</option>)}
     </select>
   );
 };

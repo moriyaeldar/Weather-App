@@ -3,14 +3,7 @@
   box-shadow: 0 0 4px 1px #0000003b;
   cursor: pointer;
 
-  .date{
-    color: steelblue;
-  }
-  .img-container{
-    height: 100px;
-    width:100%;
-    overflow: hidden;
-  }
+
   img{
    width: 400%;
    height: 200%;
@@ -34,43 +27,31 @@
 
     }
     &.Light.Rain{
-      object-position: -438px -120px;
+      object-position: -416px -120px;
     }
     &.Showers	{
       object-position:  -170px -105px;
 
     }
     &.Heavy.Cloud	{
-      object-position: -74px -119px;
+      object-position: -50px -119px;
 
     }
     &.Light.Cloud	{
-       object-position: -75px -5px;
+       object-position: -56px -5px;
         
 
     }
     &.Clear	{
-      object-position: -435px 4px;
+      object-position: -411px 4px;
     }
     
     }
   
-  > p {
-    text-align: center;
-
-    &:nth-of-type(2) {
-      font-size: 13px;
-    }
-  }
-
   .actions {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5px;
-
-    button {
-      margin-top: 10px;
-    }
   }
 }

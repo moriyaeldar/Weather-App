@@ -11,7 +11,7 @@ getWeatherArrow
 const key = "WEATHER";
 const dataKey = "DATA";
 async function query(filterBy) {
-  const cityId = !filterBy ? "2459115" : filterBy;
+  const cityId = filterBy;
   let weather = await axios.get(
     `https://www.metaweather.com/api/location/${cityId}/`
   );
@@ -62,9 +62,9 @@ function getWeatherArrow(weather) {
     { name: "N", value: "↑" },
     { name: "E", value: "→" },
   ];
-  const arrow = arrows.map((arr) =>
-    arr.name === weather.wind_direction_compass ? arr.value : ""
+  const arrow = arrows.filter((arr) =>
+    arr.name === weather.wind_direction_compass 
   );
-  return arrow;
+  return arrow[0].value;
 };
 

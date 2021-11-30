@@ -1,33 +1,25 @@
 import { useEffect, useState } from "react";
 import { WeatherList } from "../cmps/WeatherList";
+import { TimeData } from "../cmps/TimeData";
 import { WeatherFilter } from "../cmps/WeatherFilter";
 import { weatherService } from "../services/weatherService.js";
-import styled from "styled-components";
 import loader from "../assets/imgs/loader.svg";
-const listStyled = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-
-  & > li {
-    margin: 0;
-    padding: 0;
-  }
+import styled from "styled-components";
+const StyledTitle = styled.div`
+ font-size:30px;
+ font-weight:bold;
 `;
 export const WeatherApp = () => {
   const [weather, setWether] = useState(undefined);
-  const [filterBy] = useState(undefined);
   useEffect(() => {
-    getWeatherData();
-  });
-
-  const getWeatherData = async () => {
+    getWeatherData("2459115");
+  },[]);
+  const getWeatherData = async (filterBy) => {
     const weather = await weatherService.query(filterBy);
     setWether(weather);
   };
   const onChangeFilter = async (filterBy) => {
-    const weather = await weatherService.query(filterBy);
-    setWether(weather);
+    getWeatherData(filterBy)
   };
   return !weather ? (
     <img className="loader" src={loader} alt="loading..." />
@@ -36,25 +28,10 @@ export const WeatherApp = () => {
       <div className="top">
         <div className="right flex column space-around align-center">
           <WeatherFilter onChangeFilter={onChangeFilter} />
-
-          <listStyled>
-            <li>
-              <h5 data-trans="time">time</h5>
-              {weatherService.getData().time.substring(11, 16)}
-            </li>
-            <li>
-              <h5 data-trans="sunrise">sunrise</h5>
-              {weatherService.getData().sun_rise.substring(11, 16)}
-            </li>
-            <li>
-              <h5 data-trans="sunset">sunset</h5>
-              {weatherService.getData().sun_set.substring(11, 16)}
-            </li>
-          </listStyled>
+          <TimeData />
         </div>
-        <h1>{weather.data.title}</h1>
+        <StyledTitle>{weather.data.title}</StyledTitle>
       </div>
-
       <WeatherList weather={weather} />
     </div>
   );

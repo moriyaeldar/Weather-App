@@ -1,13 +1,7 @@
 .weather-details {
   margin-top: 50px;
-
-  .date {
-    color: steelblue;
-  }
-  .img-container {
-    height: 100px;
-    width: 100px;
-    overflow: hidden;
+  a {
+    color: blue;
   }
   img {
     width: 400px;
@@ -30,19 +24,19 @@
       object-position: -192px -105px;
     }
     &.Light.Rain {
-      object-position: -452px -120px;
+      object-position: -438px -120px;
     }
     &.Showers {
       object-position: -186px -101px;
     }
     &.Heavy.Cloud {
-      object-position: -84px -119px;
+      object-position: -69px -119px;
     }
     &.Light.Cloud {
       object-position: -81px -5px;
     }
     &.Clear {
-      object-position: -447px 4px;
+      object-position: -437px 4px;
     }
   }
   > p {
@@ -50,18 +44,9 @@
   }
 }
 
-h5 {
-  font-weight: bold;
-}
-
 .sources {
   gap: 5px;
   color: darkblue;
   text-align: center;
   margin-top: 15%;
-
-  h3 {
-    color: black;
-    margin-bottom: 10px;
-  }
 }

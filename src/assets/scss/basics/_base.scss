@@ -22,6 +22,12 @@ img {
   max-width: 100%;
 }
 
+.img-container {
+  height: 100px;
+  width: 130px;
+  overflow: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -37,7 +43,6 @@ p {
 a {
   text-decoration: none;
   color: inherit;
-
 }
 
 button {

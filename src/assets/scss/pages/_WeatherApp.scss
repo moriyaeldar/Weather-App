@@ -1,20 +1,12 @@
 .weather-app {
-  & > h1:first-of-type {
-    text-align: center;
-  }
+
   .top {
     display: flex;
     flex-direction: row-reverse;
     align-items: baseline;
     justify-content: space-between;
-    margin-left: 4%;
-    margin-right: 4%;
-  }
-
-  li{
-    font-size: 14px;
-    display: flex;
-    gap: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   select{
@@ -25,6 +17,3 @@ border-color: cornflowerblue;
   }
 }
 
-p{
-  font-size:14px;
- }

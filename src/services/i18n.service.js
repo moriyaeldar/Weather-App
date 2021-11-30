@@ -38,6 +38,10 @@ var gTrans = {
         en: 'confidence',
         he: 'בטחון',
     },
+    '': {
+        en: '',
+        he: '',
+    },
     Sources: {
         en: 'Sources',
         he: 'מקורות',

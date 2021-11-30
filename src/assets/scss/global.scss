@@ -1,17 +1,10 @@
 // Externals
 
-// Setup
-@import "setup/variables";
-@import "setup/functions";
-@import "setup/mixins";
-
 // Basics
 @import "basics/typography";
 @import "basics/base";
 @import "basics/helpers";
 @import "basics/layout";
-@import "basics/modals";
-@import "basics/animations";
 
 // Pages
 @import "pages/WeatherApp";
@@ -19,9 +12,6 @@
 
 
 // Components
-@import "cmps/WeatherFilter";
-@import "cmps/WeatherList";
 @import "cmps/WeatherPreview";
 @import "cmps/AppHeader";
-@import "cmps/loader.scss";
 
